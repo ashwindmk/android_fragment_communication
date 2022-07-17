@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fragment to Fragment"
+        android:layout_marginBottom="48dp" />
+
+    <Button
+        android:id="@+id/interfaces_button"
+        android:layout_width="196dp"
+        android:layout_height="wrap_content"
+        android:text="INTERFACES"
+        android:layout_marginBottom="48dp" />
+
+    <Button
+        android:id="@+id/fragment_manager_button"
+        android:layout_width="196dp"
+        android:layout_height="wrap_content"
+        android:text="FRAGMENT MANAGER"
+        android:layout_marginBottom="48dp" />
+
+    <Button
+        android:id="@+id/view_model_button"
+        android:layout_width="196dp"
+        android:layout_height="wrap_content"
+        android:text="VIEW MODEL"
+        android:layout_marginBottom="48dp" />
+
+</LinearLayout>

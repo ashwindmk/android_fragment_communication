@@ -1,0 +1,44 @@
+package com.ashwin.android.fragmentcommunication.viewmodels
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import com.ashwin.android.fragmentcommunication.R
+import com.ashwin.android.fragmentcommunication.databinding.FragmentABinding
+
+class ViewModelFragmentA : Fragment() {
+    companion object {
+        @JvmStatic
+        fun newInstance() = ViewModelFragmentA()
+
+        const val TAG = "frag-a"
+    }
+
+    private lateinit var binding: FragmentABinding
+
+    private lateinit var viewModel: MainViewModel
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = FragmentABinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+
+        binding.apply {
+            fragmentCommon.sendButton.setOnClickListener {
+                val msg = fragmentCommon.messageEditText.text.toString()
+                viewModel.send("msg_from_a", msg)
+            }
+        }
+
+        viewModel.resFromBLiveData.observe(viewLifecycleOwner, { msg ->
+            binding.fragmentCommon.messageTextView.text = msg
+        })
+    }
+}
