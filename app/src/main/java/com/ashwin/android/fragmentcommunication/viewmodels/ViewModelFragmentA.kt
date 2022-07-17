@@ -9,6 +9,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.ashwin.android.fragmentcommunication.R
 import com.ashwin.android.fragmentcommunication.databinding.FragmentABinding
 
+private const val SUB_TAG = "ViewModelFragmentA"
+
 class ViewModelFragmentA : Fragment() {
     companion object {
         @JvmStatic

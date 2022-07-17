@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentResultListener
 import com.ashwin.android.fragmentcommunication.Constant
 import com.ashwin.android.fragmentcommunication.databinding.FragmentBBinding
 
